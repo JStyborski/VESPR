@@ -3,7 +3,7 @@
 This library is a subset of the SSL_Sandbox library, a private in-development library for various SSL and SSL+SL techniques.
 To promote readability and to preserve any competitive advantage I have, I've removed the in-development sections. 
 I expect that the SSL_Sandbox library will eventually be made public and I will merge VESPR into it.
-Instruction below mirror those of SSL_Sandbox.
+Instructions below mirror those of SSL_Sandbox.
 
 This library was created to generate and train SSL models from multiple landmark methods, yet with highly customizeable architectures and training methods. 
 Replicable models include the following:
@@ -113,7 +113,7 @@ Train a network via supervised learning from scratch (no pretraining):
 python SSL_Finetune.py --trainRoot ImageNet100/train --filePrefix SL_IN100 --ftType ft --ftFromNull True --initLR 0.5 --batchSize 128 --decayLR cosdn --nEpochs 100 --weightDecay 0.0001
 ```
 
-### Trained Model Evaluation
+### Trained SSL or SL Model Evaluation
 
 File: SSL_Evaluate.py
 
@@ -148,7 +148,7 @@ This applies the nominal settings of VESPR.
 python SSLSL_PTFT.py --trainRoot ImageNet100/train --filePrefix SSLSLAT_IN100 --useAdvList True False
 ```
 
-### Trained Model Evaluation
+### Trained SSL+SL Model Evaluation
 
 File: SSLSL_Evaluate.py
 
