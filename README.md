@@ -31,7 +31,7 @@ This library is extended with multiple training techniques including the followi
 - Optimal predictor (non-learnable) following DirectSet (Wang et al., 2022: https://arxiv.org/abs/2110.04947)
 - Adversarial SSL pretraining (Jiang et al., 2020: https://arxiv.org/abs/2010.13337)
 - Adversarial supervised finetuning (Goodfellow et al., 2014: https://arxiv.org/abs/1412.6572 and Madry et al., 2017: https://arxiv.org/abs/1706.06083)
-- Multi-task training via SSL+SL and optional adversarial training (custom code).
+- Multi-task training via SSL+SL and optional adversarial training (custom code)
 - SSL poison generation (He et al., 2023: https://arxiv.org/abs/2202.11202)
 
 The user may track many important training metrics throughout training via the useProbes option.
@@ -143,8 +143,7 @@ Train a ResNet-18 encoder with contrastive loss and cross-entropy loss:
 python SSLSL_PTFT.py --trainRoot ImageNet100/train --filePrefix SSLSL_IN100
 ```
 
-Train a ResNet-18 encoder with SSL+SL but additionally with AT on the cross-entropy loss. 
-This applies the nominal settings of VESPR.
+Train a ResNet-18 encoder with SSL+SL but additionally with AT on the cross-entropy loss (nominal VESPR settings):
 ```
 python SSLSL_PTFT.py --trainRoot ImageNet100/train --filePrefix SSLSLAT_IN100 --useAdvList True False
 ```
@@ -182,9 +181,9 @@ The script works as follows:
 
 Example command line inputs:
 
-Unlearnable example poison generation for CIFAR100 on SimCLR with ResNet18 encoder:
+Unlearnable example poison generation for ImageNet-100 on SimCLR with ResNet18 encoder:
 ```
-python SSL_Poison.py --trainRoot CIFAR100/train --deltaRoot Poisoned_CIFAR/CP_100/deltas --poisonRoot Poisoned_CIFAR/CP_100/train --filePrefix SimCLR_CP
+python SSL_Poison.py --trainRoot ImageNet100/train --deltaRoot ImageNet_CIFAR/CP8_100/deltas --poisonRoot Poisoned_ImageNet/CP_100/train --filePrefix SimCLR_CP8
 ```
 
 ### Development Notes
